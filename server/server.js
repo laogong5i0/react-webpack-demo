@@ -15,4 +15,7 @@ if (isDev) {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
+require('./config/express')(app);
+require('./config/routes')(app);
+
 app.listen(app.get('port'))

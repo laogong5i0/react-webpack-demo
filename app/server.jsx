@@ -15,4 +15,5 @@ import React from 'react';
 
 export default function render(req, res) {
   console.log('init server--->');
+  console.log('kkkkkk');
 }
