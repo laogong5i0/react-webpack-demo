@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node bin/www",
     "dev-server": "cross-env NODE_ENV=development node server/server.js",
-    "dev": "webpack --progress --colors --config ./webpack/webpack.dev.config.js"
+    "dev": "webpack --progress --colors --config ./webpack/webpack.dev.config.js",
+    "build-server-app": "webpack --progress --colors --config ./webpack/webpack.prod.config.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -30,6 +31,7 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.0.1",
     "cross-env": "^1.0.7",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"

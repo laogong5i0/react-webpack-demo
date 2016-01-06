@@ -13,7 +13,6 @@ import React from 'react';
 //   port: process.env.PORT || '3000'
 // };
 
-export default function render(req, res) {
+export default (req, res)=> {
   console.log('init server--->');
-  console.log('kkkkkk');
 }

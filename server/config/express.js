@@ -3,8 +3,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 
-var httpProxy = require('http-proxy');
-var proxy = httpProxy.createProxyServer();
+// var httpProxy = require('http-proxy');
+// var proxy = httpProxy.createProxyServer();
 
 module.exports = function (app) {
   app.set('port', (process.env.PORT || 3000));
@@ -30,7 +30,7 @@ module.exports = function (app) {
   // The req.ips property, then, contains an array of IP addresses the client is connected through.
   // To enable it, use the values described in the trust proxy options table.
   // The trust proxy setting is implemented using the proxy-addr package. For more information, see its documentation.
-  app.enable('trust proxy');
+  // app.enable('trust proxy');
 
   var node_env = process.env.NODE_ENV;
   console.log('Environment: ' + node_env);
@@ -44,19 +44,19 @@ module.exports = function (app) {
     devServer();
 
     // Any request to localhost:3000 is proxied to webpack-dev-server
-    app.all('/assets/*', function(req, res) {
-      proxy.web(req, res, {
-          target: 'http://localhost:3001'
-      });
-    });
+    // app.all('/assets/*', function(req, res) {
+    //   proxy.web(req, res, {
+    //       target: 'http://localhost:3001'
+    //   });
+    // });
 
   }
 
   // It is important to catch any errors from the proxy or the
   // server will crash. An example of this is connecting to the
   // server when webpack is bundling
-  proxy.on('error', function(e) {
-    console.log('Could not connect to proxy, please try again...');
-  });
+  // proxy.on('error', function(e) {
+  //   console.log('Could not connect to proxy, please try again...');
+  // });
 
 };
